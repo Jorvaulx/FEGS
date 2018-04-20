@@ -21,7 +21,8 @@
         var environmentalColumnArray = ["EnvironmentalClass", "EnvironmentalSubclass"],
             ecologicalColumnArray = ["Ecological End-Product Class", "Ecological End-Product Subclass"],
             directUseColumnArray = ["Direct Use/Non-Use Class", "Direct Use/Non-Use Subclass I", "Direct Use/Non-Use Subclass II"],
-            directUserColumnArray = ["Direct User Class", "Direct User Subclass I", "Direct User Subclass II"];
+            directUserColumnArray = ["Direct User Class", "Direct User Subclass I", "Direct User Subclass II"],
+            idArrayColumn = ['FESID2244'];
 
         function handleResponse(data) {
             sessionStorage.setItem('data', data);
@@ -31,18 +32,17 @@
         }
 
         function setFullDisplay(data) {
-            displayColumns = [];
-            displayColumns.push.apply(environmentalColumnArray, ecologicalColumnArray);
-            displayColumns.push.apply(directUseColumnArray, directUserColumnArray);
+            var displayColumns = [];
+            displayColumns = displayColumns.concat(environmentalColumnArray, ecologicalColumnArray, directUseColumnArray, directUserColumnArray,idArrayColumn);
             sessionStorage.setItem('data', getDefinedColumns(data, displayColumns));
         }
 
         function setEnvironmentalArray(data) {
             environmentalColumnArray.push('FESID2244');
+            console.log('environmentalColumnArray',environmentalColumnArray);
             var tempArray = getDefinedColumns(data, environmentalColumnArray),
                 environmentalArray = [];
             tempArray.forEach(function (item) {
-                console.log('item',item);
                 var environmentalId = item[2].substring(0, 2),
                     index = environmentalArray.map(function (x) {
                         return x.id
@@ -55,20 +55,48 @@
                     });
                 }
             });
+            environmentalArray.sort(function(a,b){
+                var ecoClassA = a.environmentalClass.toUpperCase();
+                var ecoClassB = b.environmentalClass.toUpperCase();
+                var ecoSubClassA = a.environmentalSubClass.toUpperCase();
+                var ecoSubClassB = b.environmentalSubClass.toUpperCase();
+                if (ecoClassA < ecoClassB) {
+                    return -1;
+                }
+                if (ecoClassA > ecoClassB) {
+                    return 1;
+                }
+                if (ecoSubClassA < ecoSubClassB) {
+                    return -1;
+                }
+                if (ecoSubClassA > ecoSubClassB) {
+                    return 1;
+                }
+
+                // names must be equal
+                return 0;
+
+            })
             console.log('environmentalArray:', environmentalArray);
         }
 
 
-
         function getDefinedColumns(data, displayColumns) {
-            var columns = [];
-            console.log('first row', data[0]);
+            var columns = [], results = [];
             displayColumns.forEach(function (item) {
                 var index = data[0].indexOf(item);
                 columns.push(index);
             });
-            console.log('columns:', columns);
-            return columns;
+            console.log('columns',columns);
+            data.forEach (function(item){
+                var row = [];
+                columns.forEach(function(index){
+                   row.push(item[index]);
+                });
+               results.push(row);
+            });
+
+            return results;
         }
     });
 </script>
