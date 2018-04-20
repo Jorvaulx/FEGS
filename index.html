@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>FEGS Project</title>
+</head>
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="https://www.epa.gov/sites/all/libraries/js/d3.v3.min.js"></script>
+<h1>FEGS</h1>
+<blockquote id="data"></blockquote>
+</html>
+<script>
+
+    $(document).ready(function () {
+        var ajaxOptions = {
+            url: 'Core FES v5.csv',
+            context: document.body,
+            dataType: 'text'
+        };
+        $.ajax(ajaxOptions).done(handleResponse);
+
+        var environmentalColumnArray = ["EnvironmentalClass", "EnvironmentalSubclass"],
+            ecologicalColumnArray = ["Ecological End-Product Class", "Ecological End-Product Subclass"],
+            directUseColumnArray = ["Direct Use/Non-Use Class", "Direct Use/Non-Use Subclass I", "Direct Use/Non-Use Subclass II"],
+            directUserColumnArray = ["Direct User Class", "Direct User Subclass I", "Direct User Subclass II"];
+
+        function handleResponse(data) {
+            sessionStorage.setItem('data', data);
+            var rows = d3.csv.parseRows(data);
+            setFullDisplay(rows);
+            setEnvironmentalArray(rows);
+        }
+
+        function setFullDisplay(data) {
+            displayColumns = [];
+            displayColumns.push.apply(environmentalColumnArray, ecologicalColumnArray);
+            displayColumns.push.apply(directUseColumnArray, directUserColumnArray);
+            sessionStorage.setItem('data', getDefinedColumns(data, displayColumns));
+        }
+
+        function setEnvironmentalArray(data) {
+            environmentalColumnArray.push('FESID2244');
+            var tempArray = getDefinedColumns(data, environmentalColumnArray),
+                environmentalArray = [];
+            tempArray.forEach(function (item) {
+                console.log('item',item);
+                var environmentalId = item[2].substring(0, 2),
+                    index = environmentalArray.map(function (x) {
+                        return x.id
+                    }).indexOf(environmentalId);
+                if (index == -1) {
+                    environmentalArray.push({
+                        'id': environmentalId,
+                        'environmentalClass': item[0],
+                        'environmentalSubClass': item[1]
+                    });
+                }
+            });
+            console.log('environmentalArray:', environmentalArray);
+        }
+
+
+
+        function getDefinedColumns(data, displayColumns) {
+            var columns = [];
+            console.log('first row', data[0]);
+            displayColumns.forEach(function (item) {
+                var index = data[0].indexOf(item);
+                columns.push(index);
+            });
+            console.log('columns:', columns);
+            return columns;
+        }
+    });
+</script>
