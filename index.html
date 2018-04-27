@@ -1,102 +1,295 @@
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7]>
+<html class="iem7 no-js" lang="en" dir="ltr"><![endif]-->
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7 no-js" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>
+<html class="lt-ie9 lt-ie8 no-js" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9 no-js" lang="en" dir="ltr"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)]><!-->
+<html class="no-js not-oldie" lang="en" dir="ltr"> <!--<![endif]-->
 <head>
-    <title>FEGS Project</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="shortcut icon" href="https://www.epa.gov/sites/all/themes/epa/favicon.ico"
+          type="image/vnd.microsoft.icon"/>
+    <meta name="MobileOptimized" content="width"/>
+    <meta http-equiv="cleartype" content="on"/>
+    <meta http-equiv="ImageToolbar" content="false"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="version" content="20161218"/>
+    <!--googleon: all-->
+    <meta name="DC.description" content=""/>
+    <meta name="DC.title" content=""/>
+    <title>Final Ecosystem Goods and Services Classification System (FEGS-CS) | US EPA</title>
+    <!--googleoff: snippet-->
+    <meta name="keywords" content=""/>
+    <link rel="shortlink" href=""/>
+    <link rel="canonical" href=""/>
+    <meta name="DC.creator" content=""/>
+    <meta name="DC.language" content="en"/>
+    <meta name="DC.Subject.epachannel" content=""/>
+    <meta name="DC.type" content=""/>
+    <meta name="DC.date.created" content=""/>
+    <meta name="DC.date.modified" content=""/>
+    <!--googleoff: all-->
+    <link type="text/css" rel="stylesheet" href="https://www.epa.gov/sites/all/libraries/template2/s.css" media="all"/>
+    <!--[if lt IE 9]>
+    <link type="text/css" rel="stylesheet" href="https://www.epa.gov/sites/all/themes/epa/css/ie.css" media="all"/>
+    <![endif]-->
+    <link rel="alternate" type="application/atom+xml" title="EPA.gov All Press Releases"
+          href="https://www.epa.gov/newsreleases/search/rss"/>
+    <link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases"
+          href="https://www.epa.gov/newsreleases/search/rss/field_press_office/headquarters"/>
+    <link rel="alternate" type="application/atom+xml" title="Greenversations, EPA's Blog"
+          href="https://blog.epa.gov/blog/feed/"/>
+    <!--[if lt IE 9]>
+    <script src="https://www.epa.gov/sites/all/themes/epa/js/html5.js"></script><![endif]-->
 </head>
-<script src="main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-<script src="https://www.epa.gov/sites/all/libraries/js/d3.v3.min.js"></script>
-<h1>FEGS</h1>
-<blockquote id="data"></blockquote>
-</html>
-<script>
+<!-- NOTE, figure out body classes! -->
+<body class="node-type-(web-area|page|document|webform) (microsite|resource-directory) wide-template">
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-L8ZB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-L8ZB');</script>
+<!-- End Google Tag Manager -->
+<div class="skip-links"><a href="#main-content" class="skip-link element-invisible element-focusable">Jump to main
+    content</a></div>
+<header class="masthead clearfix" role="banner">
+    <img class="site-logo" src="https://www.epa.gov/sites/all/themes/epa/logo.png" alt=""/>
+    <hgroup class="site-name-and-slogan">
+        <h1 class="site-name"><a href="https://www.epa.gov/" title="Go to the home page" rel="home"><span>US EPA</span></a>
+        </h1>
+        <div class="site-slogan">United States Environmental Protection Agency</div>
+    </hgroup>
+    <form class="epa-search" method="get" action="https://search.epa.gov/epasearch/epasearch">
+        <label class="element-hidden" for="search-box">Search</label>
+        <input class="form-text" placeholder="Search EPA.gov" name="querytext" id="search-box" value=""/>
+        <button class="epa-search-button" id="search-button" type="submit" title="Search">Search</button>
+        <input type="hidden" name="areaname" value=""/>
+        <input type="hidden" name="areacontacts" value=""/>
+        <input type="hidden" name="areasearchurl" value=""/>
+        <input type="hidden" name="typeofsearch" value="epa"/>
+        <input type="hidden" name="result_template" value="2col.ftl"/>
+    </form>
+</header>
+<section id="main-content" class="main-content clearfix" role="main">
+    <div class="region-preface clearfix">
+        <div id="block-pane-epa-web-area-connect" class="block block-pane contextual-links-region">
+            <ul class="menu utility-menu">
+                <li class="menu-item"><a href="{CONTACT URL}" class="menu-link contact-us">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-column clearfix">
+        <!--googleon: all-->
+        <h1 class="page-title">Final Ecosystem Goods and Services Classification System (FEGS-CS)</h1>
+        <div class="panel-pane pane-node-content">
+            <div class="pane-content">
+                <div class="node node-page clearfix view-mode-full">
+                    <!--    {BEGIN PAGE CONTENT} -->
 
-    $(document).ready(function () {
+                    <div class="row">
+                        <div><label for="environmental">Environmental</label></div>
+                        <div>
+                            <span validation="environmental" class="help-block"></span>
+                            <select id="environmental">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div><label for="ecological">Ecological</label></div>
+                        <div>
+                            <span validation="ecological" class="help-block"></span>
+                            <select id="ecological">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div><label for="directUse">Direct Use</label></div>
+                        <div>
+                            <span validation="directUse" class="help-block"></span>
+                            <select id="directUse">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div><label for="directUser">Direct User</label></div>
+                        <div>
+                            <span validation="directUser" class="help-block"></span>
+                            <select id="directUser">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn btn-primary" id="addEvent">Add</div>
+
+
+                    <!-- Custom Modals --->
+                    <div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="nameModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="exampleModalLabel">Name of Filtered List</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="nameFilteredItem" class="control-label">Name:</label>
+                                            <span class="help-block" validation="nameFilteredItem"></span>
+                                            <input type="text" class="form-control" id="nameFilteredItem">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary confirm">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--    {PAGE CONTENT END} -->
+                </div>
+            </div>
+        </div>
+        <div id="block-epa-og-footer" class="block block-epa-og">
+            <p>{FOOTER CONTENT}</p>
+        </div>
+        <!--googleoff: all-->
+    </div>
+</section>
+<nav class="nav simple-nav simple-main-nav" role="navigation">
+    <div class="nav__inner">
+        <h2 class="element-invisible">Main menu</h2>
+        <ul class="menu" role="menu">
+            <li class="menu-item" id="menu-learn" role="presentation"><a href="https://www.epa.gov/environmental-topics"
+                                                                         title="Learn about Environmental Topics that EPA covers."
+                                                                         class="menu-link" role="menuitem">Environmental
+                Topics</a></li>
+            <li class="menu-item" id="menu-lawsregs" role="presentation"><a href="https://www.epa.gov/laws-regulations"
+                                                                            title="Laws written by Congress provide the authority for EPA to write regulations. Regulations explain the technical, operational, and legal details necessary to implement laws."
+                                                                            class="menu-link" role="menuitem">Laws &amp;
+                Regulations</a></li>
+            <li class="menu-item" id="menu-about" role="presentation"><a href="https://www.epa.gov/aboutepa"
+                                                                         title="Learn more about: our mission and what we do, how we are organized, and our history."
+                                                                         class="menu-link" role="menuitem">About EPA</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<footer class="main-footer clearfix" role="contentinfo">
+    <div class="main-footer__inner">
+        <div class="region-footer">
+            <div class="block block-pane block-pane-epa-global-footer">
+                <div class="row cols-3">
+                    <div class="col size-1of3">
+                        <div class="col__title">Discover.</div>
+                        <ul class="menu">
+                            <li><a href="https://www.epa.gov/accessibility">Accessibility</a></li>
+                            <li><a href="https://www.epa.gov/aboutepa/administrator-gina-mccarthy">EPA Administrator</a>
+                            </li>
+                            <li><a href="https://www.epa.gov/planandbudget">Budget &amp; Performance</a></li>
+                            <li><a href="https://www.epa.gov/contracts">Contracting</a></li>
+                            <li><a href="https://www.epa.gov/home/grants-and-other-funding-opportunities">Grants</a>
+                            </li>
+                            <li>
+                                <a href="https://www.epa.gov/ocr/whistleblower-protections-epa-and-how-they-relate-non-disclosure-agreements-signed-epa-employees">No
+                                    FEAR Act Data</a></li>
+                            <li><a href="https://www.epa.gov/home/privacy-and-security-notice">Privacy and Security</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col size-1of3">
+                        <div class="col__title">Connect.</div>
+                        <ul class="menu">
+                            <li><a href="https://www.data.gov/">Data.gov</a></li>
+                            <li>
+                                <a href="https://www.epa.gov/office-inspector-general/about-epas-office-inspector-general">Inspector
+                                    General</a></li>
+                            <li><a href="https://www.epa.gov/careers">Jobs</a></li>
+                            <li><a href="https://www.epa.gov/newsroom">Newsroom</a></li>
+                            <li><a href="https://www.whitehouse.gov/open">Open Government</a></li>
+                            <li><a href="http://www.regulations.gov/">Regulations.gov</a></li>
+                            <li><a href="https://www.epa.gov/newsroom/email-subscriptions">Subscribe</a></li>
+                            <li><a href="https://www.usa.gov/">USA.gov</a></li>
+                            <li><a href="https://www.whitehouse.gov/">White House</a></li>
+                        </ul>
+                    </div>
+                    <div class="col size-1of3">
+                        <div class="col__title">Ask.</div>
+                        <ul class="menu">
+                            <li><a href="https://www.epa.gov/home/forms/contact-us">Contact Us</a></li>
+                            <li><a href="https://www.epa.gov/home/epa-hotlines">Hotlines</a></li>
+                            <li><a href="https://www.epa.gov/foia">FOIA Requests</a></li>
+                            <li><a href="https://www.epa.gov/home/frequent-questions-specific-epa-programstopics">Frequent
+                                Questions</a></li>
+                        </ul>
+                        <div class="col__title">Follow.</div>
+                        <ul class="social-menu">
+                            <li><a class="menu-link social-facebook" href="https://www.facebook.com/EPA">Facebook</a>
+                            </li>
+                            <li><a class="menu-link social-twitter" href="https://twitter.com/epa">Twitter</a></li>
+                            <li><a class="menu-link social-youtube"
+                                   href="https://www.youtube.com/user/USEPAgov">YouTube</a></li>
+                            <li><a class="menu-link social-flickr"
+                                   href="https://www.flickr.com/photos/usepagov">Flickr</a></li>
+                            <li><a class="menu-link social-instagram" href="https://instagram.com/epagov">Instagram</a>
+                            </li>
+                        </ul>
+                        <p class="last-updated">{LAST UPDATED DATE}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://www.epa.gov/sites/all/libraries/template2/jquery.js"></script>
+<script src="modal.js"></script>
+<script src="https://www.epa.gov/sites/all/libraries/template2/js.js"></script>
+<script src="https://www.epa.gov/sites/all/modules/custom/epa_core/js/alert.js"></script>
+<!--[if lt IE 9]>
+<script src="https://www.epa.gov/sites/all/themes/epa/js/ie.js"></script><![endif]-->
+<!-- REMOVE if not using -->
+
+<script src="d3.v3.min.js"></script>
+<script src="select2.full.js"></script>
+<script src="main.js"></script>
+<link href="select2.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+</body>
+</html>
+
+<script>
+    window.environmentalColumnArray = ["EnvironmentalClass", "EnvironmentalSubclass"];
+    window.ecologicalColumnArray = ["Ecological End-Product Class", "Ecological End-Product Subclass"];
+    window.directUseColumnArray = ["Direct Use/Non-Use Class", "Direct Use/Non-Use Subclass I", "Direct Use/Non-Use Subclass II"];
+    window.directUserColumnArray = ["Direct User Class", "Direct User Subclass I", "Direct User Subclass II"];
+    window.idArrayColumn = ['FESID2244'];
+
+    jQuery(document).ready(function () {
         var ajaxOptions = {
             url: 'Core FES v5.csv',
             context: document.body,
             dataType: 'text'
         };
-        $.ajax(ajaxOptions).done(handleResponse);
-
-        var environmentalColumnArray = ["EnvironmentalClass", "EnvironmentalSubclass"],
-            ecologicalColumnArray = ["Ecological End-Product Class", "Ecological End-Product Subclass"],
-            directUseColumnArray = ["Direct Use/Non-Use Class", "Direct Use/Non-Use Subclass I", "Direct Use/Non-Use Subclass II"],
-            directUserColumnArray = ["Direct User Class", "Direct User Subclass I", "Direct User Subclass II"],
-            idArrayColumn = ['FESID2244'];
-
-        function handleResponse(data) {
-            sessionStorage.setItem('data', data);
-            var rows = d3.csv.parseRows(data);
-            setFullDisplay(rows);
-            setEnvironmentalArray(rows);
-        }
-
-        function setFullDisplay(data) {
-            var displayColumns = [];
-            displayColumns = displayColumns.concat(environmentalColumnArray, ecologicalColumnArray, directUseColumnArray, directUserColumnArray,idArrayColumn);
-            sessionStorage.setItem('data', getDefinedColumns(data, displayColumns));
-        }
-
-        function setEnvironmentalArray(data) {
-            environmentalColumnArray.push('FESID2244');
-            console.log('environmentalColumnArray',environmentalColumnArray);
-            var tempArray = getDefinedColumns(data, environmentalColumnArray),
-                environmentalArray = [];
-            tempArray.forEach(function (item) {
-                var environmentalId = item[2].substring(0, 2),
-                    index = environmentalArray.map(function (x) {
-                        return x.id
-                    }).indexOf(environmentalId);
-                if (index == -1) {
-                    environmentalArray.push({
-                        'id': environmentalId,
-                        'environmentalClass': item[0],
-                        'environmentalSubClass': item[1]
-                    });
-                }
-            });
-            environmentalArray.sort(function(a,b){
-                var ecoClassA = a.environmentalClass.toUpperCase();
-                var ecoClassB = b.environmentalClass.toUpperCase();
-                var ecoSubClassA = a.environmentalSubClass.toUpperCase();
-                var ecoSubClassB = b.environmentalSubClass.toUpperCase();
-                if (ecoClassA < ecoClassB) {
-                    return -1;
-                }
-                if (ecoClassA > ecoClassB) {
-                    return 1;
-                }
-                if (ecoSubClassA < ecoSubClassB) {
-                    return -1;
-                }
-                if (ecoSubClassA > ecoSubClassB) {
-                    return 1;
-                }
-
-                // names must be equal
-                return 0;
-
-            })
-            console.log('environmentalArray:', environmentalArray);
-        }
-
-
-        function getDefinedColumns(data, displayColumns) {
-            var columns = [], results = [];
-            displayColumns.forEach(function (item) {
-                var index = data[0].indexOf(item);
-                columns.push(index);
-            });
-            console.log('columns',columns);
-            data.forEach (function(item){
-                var row = [];
-                columns.forEach(function(index){
-                   row.push(item[index]);
-                });
-               results.push(row);
-            });
-
-            return results;
-        }
+        jQuery.ajax(ajaxOptions).done(handleResponse);
+        jQuery('#addEvent').click(addEvent)
     });
 </script>
